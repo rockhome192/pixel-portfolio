@@ -20,7 +20,7 @@ function getRatelimit(): Ratelimit | null {
     redis: new Redis({ url, token }),
     // 3 messages per 10 minutes per IP.
     limiter: Ratelimit.slidingWindow(3, "10 m"),
-    prefix: "portfolio:contact",
+    prefix: "pixel:contact",
     // In-memory cache so an already-blocked IP is rejected without another Redis
     // round-trip while this instance stays warm.
     ephemeralCache: new Map(),
